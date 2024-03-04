@@ -17,7 +17,7 @@ __was_fp_files_latest:
 
 __this_version:         "{{ was_fp_version | default( __was_fp_version_latest ) }}"
 __this_files:           "{{ was_fp_files | default( __was_fp_files_latest ) }}"
-__version_check:        "Updated to com.ibm.websphere.ND.v85_{{ __this_version }}"
+__version_check:        "Updated to com.ibm.websphere.ND"
 __product_id:           "\"id='com.ibm.websphere.ND.v85' version='{{ __this_version }}'\""
 
 __iim_product_id:       "\"id='com.ibm.cic.agent\""
