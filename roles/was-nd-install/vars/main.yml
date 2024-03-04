@@ -14,5 +14,5 @@ __was_files:
   - { file_name: WAS_ND_V8.5.5_3_OF_3.zip, check_sum: b73ae070656bed6399a113c2db9fb0abaf5505b0d41c564bf2a58ce0b1e0dcd2 }
 __this_version:         "{{ was_version | default('8.5.5000.20130514_1044') }}"
 __product_id:           "\"id='com.ibm.websphere.ND.v85'\""
-__version_check:        "Installed com.ibm.websphere.ND.v85_8.5.5000"
+__version_check:        "Installed com.ibm.websphere.ND"
 __iim_product_id:       "\"id='com.ibm.cic.agent\""
