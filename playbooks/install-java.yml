@@ -1,7 +1,7 @@
 ---
-- name:                    Install Java
+- name:                    Install IBM Installation Manager
   hosts:                   dmgr,was_servers
   #  serial:                  2
   become:                  true
   roles:
-    - roles/was-java-install
+    - roles/installation-manager-install
