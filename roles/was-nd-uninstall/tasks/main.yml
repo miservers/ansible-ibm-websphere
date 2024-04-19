@@ -1,5 +1,5 @@
 ---
-- name:          Uninstall IBM WAS Software
+- name:          Uninstalling IBM WAS Software
   command:
     "{{ __iim_install_location }}/eclipse/tools/imcl uninstall {{ __product_id }}_{{ __this_version }} {{ __jdk_product_id }}_{{ __jdk_version }} -installationDirectory {{ __was_install_location }} -showProgress"
   register:      uninstall_out
