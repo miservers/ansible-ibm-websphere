@@ -11,8 +11,6 @@
 - name:          Create Logs directory
   file:          path={{ __logs_dir }} state=directory mode=0755
 
-
-
 - name:          Generate WAS Response file
   template:
     src:         "{{ __tpl_file }}"
