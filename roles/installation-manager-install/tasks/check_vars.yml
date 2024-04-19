@@ -1,4 +1,3 @@
-# check_openshift.yml
 ---
 - name: iim_repository_url should be defined
   assert:
