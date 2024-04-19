@@ -2,6 +2,10 @@
 - name:          Uninstall IBM WAS Software
   command:
     "{{ __iim_install_location }}/eclipse/tools/imcl uninstall {{ __product_id }}_{{ __this_version }} {{ __jdk_product_id }}_{{ __jdk_version }} -installationDirectory {{ __was_install_location }} -showProgress"
-  register:      cout
-  changed_when:  ( cout.stdout.find( __version_check ) == -1)
+  register:      uninstall_out
+
+- debug:
+    msg: "{{ uninstall_out }}"
+
+# changed_when:  ( cout.stdout.find( __version_check ) == -1)
 
