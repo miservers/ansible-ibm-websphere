@@ -12,13 +12,9 @@
   </profile>
   <install>
     <!-- IBM WebSphere Application Server Network Deployment  9.0.5.16 -->
-    <offering profile='IBM WebSphere Application Server V9.0' 
-	          id='{{ __product_id }}' version='{{ was_version }}' 
-			  features='core.feature,ejbdeploy,thinclient,embeddablecontainer,samples'/>
+    <offering profile='IBM WebSphere Application Server V9.0'  id='{{ __product_id }}' version='{{ was_version }}' features='core.feature,ejbdeploy,thinclient,embeddablecontainer,samples'/>
     <!-- IBM SDK, Java Technology Edition, Version 8 8.0.8.21 -->
-    <offering profile='IBM WebSphere Application Server V9.0' 
-	          id='{{ __jdk_product_id }}' version='{{ __jdk_version }}' 
-			  features='com.ibm.sdk.8'/>
+	<offering profile='IBM WebSphere Application Server V9.0' id='com.ibm.java.jdk.v8' version='8.0.8021.20240318_0922' features='com.ibm.sdk.8'/>
   </install>
   <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${sharedLocation}'/>
 </agent-input>
