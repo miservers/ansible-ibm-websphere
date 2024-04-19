@@ -11,9 +11,8 @@ __tpl_file:             "was_nd.rsp.j2"
 
 # see repository.xml
 __this_version:         "{{ was_version | default('9.0.5016.20230609_0954') }}"
-__product_id:           "\"id='com.ibm.websphere.ND.v90'\""
+__product_id:           "com.ibm.websphere.ND.v90"
 __version_check:        "Installed com.ibm.websphere.ND"
-__iim_product_id:       "\"id='com.ibm.cic.agent\""
 
 # JDK 
 __jdk_product_id:       "com.ibm.java.jdk.v8"

@@ -1,0 +1,7 @@
+---
+- name:                    UnInstall WebSphere Application Server - Network Deployment
+  hosts:                   dmgr,was_servers
+  #  serial:                  2
+  become:                  true
+  roles:
+    - roles/was-nd-uninstall

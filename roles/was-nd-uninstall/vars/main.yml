@@ -1,0 +1,11 @@
+---
+# WAS version
+__was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+
+__this_version:         "{{ was_version | default('9.0.5016.20230609_0954') }}"
+__product_id:           "com.ibm.websphere.ND.v90"
+__version_check:        "Installed com.ibm.websphere.ND"
+
+# JDK version
+__jdk_product_id:       "com.ibm.java.jdk.v8"
+__jdk_version:          "{{ jdk_version | default('8.0.8021.20240318_0922') }}"
