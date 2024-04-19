@@ -1,34 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<agent-input acceptLicense='true'>
+<?xml version='1.0' encoding='UTF-8'?>
+<agent-input>
+  <variables>
+    <variable name='sharedLocation' value='{{ imshared_location }}'/>
+  </variables>
   <server>
-    <repository location='{{ __tmp_dir }}'/>
+    <repository location='{{ was_repository_url }}'/>
   </server>
-  <profile id='IBM WebSphere Application Server V8.5' installLocation='{{ __was_install_location }}'>
-    <data key='eclipseLocation' value='{{ __was_install_location }}'/>
-    <data key='user.import.profile' value='false'/>
-    <data key='cic.selector.os' value='linux'/>
-    <data key='cic.selector.arch' value='x86'/>
-    <data key='cic.selector.ws' value='gtk'/>
-    <data key='cic.selector.nl' value='en'/>
+  <profile id='IBM WebSphere Application Server V9.0' installLocation='{{ was_install_location }}'>
+    <data key='cic.selector.arch' value='x86_64'/>
+    <data key='cic.selector.nl' value='en,fr'/>
   </profile>
-  <install modify='false'>
-    <offering id='com.ibm.websphere.ND.v85' profile='IBM WebSphere Application Server V8.5' features='core.feature,ejbdeploy,thinclient,embeddablecontainer,com.ibm.sdk.6_64bit' installFixes='none'/>
+  <install>
+    <!-- IBM WebSphere Application Server Network Deployment  9.0.5.16 -->
+    <offering profile='IBM WebSphere Application Server V9.0' 
+	          id='{{ __product_id }}' version='{{ was_version }}' 
+			  features='core.feature,ejbdeploy,thinclient,embeddablecontainer,samples'/>
+    <!-- IBM SDK, Java Technology Edition, Version 8 8.0.8.21 -->
+    <offering profile='IBM WebSphere Application Server V9.0' 
+	          id='{{ __jdk_product_id }}' version='{{ __jdk_version }}' 
+			  features='com.ibm.sdk.8'/>
   </install>
-  <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='{{ __imshared_location }}'/>
-  <preference name='com.ibm.cic.common.core.preferences.connectTimeout' value='30'/>
-  <preference name='com.ibm.cic.common.core.preferences.readTimeout' value='45'/>
-  <preference name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount' value='0'/>
-  <preference name='offering.service.repositories.areUsed' value='false'/>
-  <preference name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode' value='false'/>
-  <preference name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication' value='false'/>
-  <preference name='http.ntlm.auth.kind' value='NTLM'/>
-  <preference name='http.ntlm.auth.enableIntegrated.win32' value='true'/>
-  <preference name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts' value='true'/>
-  <preference name='com.ibm.cic.common.core.preferences.keepFetchedFiles' value='false'/>
-  <preference name='PassportAdvantageIsEnabled' value='false'/>
-  <preference name='com.ibm.cic.common.core.preferences.searchForUpdates' value='false'/>
-  <preference name='com.ibm.cic.agent.ui.displayInternalVersion' value='false'/>
-  <preference name='com.ibm.cic.common.sharedUI.showErrorLog' value='true'/>
-  <preference name='com.ibm.cic.common.sharedUI.showWarningLog' value='true'/>
-  <preference name='com.ibm.cic.common.sharedUI.showNoteLog' value='true'/>
+  <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${sharedLocation}'/>
 </agent-input>

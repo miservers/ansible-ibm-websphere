@@ -8,88 +8,13 @@ __now:                  "{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
 __rsp_file:             "{{ __logs_dir }}/was_nd.rsp"
 __log_file:             "{{ __logs_dir }}/was_nd_install.{{ __now }}.log"
 __tpl_file:             "was_nd.rsp.j2"
-__was_files:
-  - { file_name: WAS_ND_V8.5.5_1_OF_3.zip, check_sum: b1333962ba4b25c8632c7e4c82b472350337e99febac8f70ffbd551ca3905e83 }
-  - { file_name: WAS_ND_V8.5.5_2_OF_3.zip, check_sum: 440b7ed82089d43b1d45c1e908bf0a1951fed98f2542b6d37c8b5e7274c6b1c9 }
-  - { file_name: WAS_ND_V8.5.5_3_OF_3.zip, check_sum: b73ae070656bed6399a113c2db9fb0abaf5505b0d41c564bf2a58ce0b1e0dcd2 }
-__this_version:         "{{ was_version | default('8.5.5000.20130514_1044') }}"
-__product_id:           "\"id='com.ibm.websphere.ND.v85'\""
+
+# see repository.xml
+__this_version:         "{{ was_version | default('9.0.5016.20230609_0954') }}"
+__product_id:           "\"id='com.ibm.websphere.ND.v90'\""
 __version_check:        "Installed com.ibm.websphere.ND"
 __iim_product_id:       "\"id='com.ibm.cic.agent\""
 
-
-# Still need to work on this
-# "{{ compatibility_matrix[ was_version ].was.version }}"
-# ---------------------------------------------------------------------------------------
-compatibility_matrix:
-  9.0.5.0:
-    was:
-      profile_name: "IBM WebSphere Application Server V9.0"
-      product_id: "com.ibm.websphere.ND.v90"
-      version: "9.0.0.20160526_1854"
-      version_check: "Installed com.ibm.websphere.ND"
-      files:
-        - { file_name: WAS_ND_V9.0.5_1_OF_3.zip, check_sum:  }
-        - { file_name: WAS_ND_V9.0.5_2_OF_3.zip, check_sum:  }
-        - { file_name: WAS_ND_V9.0.5_3_OF_3.zip, check_sum:  }
-      fp_version_check: "Updated to com.ibm.websphere.ND"
-      fp15:
-        version: "9.0.5015.20230321_2220"
-        files:
-          - { file_name: 9.0.5-WS-WAS-FP015.zip, check_sum: a0821b1d34d81b2ef2b54db466befe290599adce6a60fdb5ef27a9ab98542694 }
-  9.0.0.0:
-    was:
-      profile_name: "IBM WebSphere Application Server V9.0"
-      product_id: "com.ibm.websphere.ND.v90"
-      version: "9.0.0.20160526_1854"
-      version_check: "Installed com.ibm.websphere.ND"
-      files:
-        - { file_name: was.repo.9000.base.zip, check_sum: abe69d48355ec71f2f6d855c289683c3590c48a39e3fb6a6fa1b4b69c7a9207e }
-      fp5:
-        version: "9.0.5.20170918_1844"
-        files:
-          - { file_name: 9.0.0-WS-WAS-FP005.zip, check_sum: b607e6b1553df6c9c937b8aedfc6c4d1192820f32a43f004da7b2b9ce2e41944 }
-  8.5.5.0:
-    was:
-      profile_name: "IBM WebSphere Application Server V8.5"
-      product_id: "com.ibm.websphere.ND.v85"
-      version: "8.5.5000.20130514_1044"
-      version_check: "Installed com.ibm.websphere.ND"
-      files:
-        - { file_name: WAS_ND_V8.5.5_1_OF_3.zip, check_sum: b1333962ba4b25c8632c7e4c82b472350337e99febac8f70ffbd551ca3905e83 }
-        - { file_name: WAS_ND_V8.5.5_2_OF_3.zip, check_sum: 440b7ed82089d43b1d45c1e908bf0a1951fed98f2542b6d37c8b5e7274c6b1c9 }
-        - { file_name: WAS_ND_V8.5.5_3_OF_3.zip, check_sum: b73ae070656bed6399a113c2db9fb0abaf5505b0d41c564bf2a58ce0b1e0dcd2 }
-      fp_version_check: "Updated to com.ibm.websphere.ND"
-      fp17:
-        version: "8.5.5017.20200205_1450"
-        files:
-          - { file_name: 8.5.5-WS-WAS-FP017-part1.zip, check_sum: f86e59f659c5a67fac52bfd514277f3e22b06122fec7b9efc74ff576a37aa4a1 }
-          - { file_name: 8.5.5-WS-WAS-FP017-part2.zip, check_sum: 9207f95e92a861a97b5a765e7da3bba9651a0f4b7ab9dab903152589ca15575b }
-          - { file_name: 8.5.5-WS-WAS-FP017-part3.zip, check_sum: ef7521feec369122cecee153fdb4c55299cb0adc76a66415d0f8959431eb6adb }
-    ihs:
-      profile_name: "IBM HTTP Server V8.5"
-      product_id: "id='com.ibm.websphere.IHS.v85'"
-      version_details: "8.5.5000.20130514_1044"
-      version_check: "Installed com.ibm.websphere.IHS.v85_8.5.5000"
-      wct_profile_name: "WebSphere Customization Toolbox V8.5"
-      wct_profile_id: "com.ibm.websphere.WCT.v85"
-      files :
-        - { file_name: WAS_V8.5.5_SUPPL_1_OF_3.zip, check_sum: d63c59de4a5548e3d26e71fefb76193d41ac7585bc450c1e504287e0a6f746c9 }
-        - { file_name: WAS_V8.5.5_SUPPL_2_OF_3.zip, check_sum: ac00e7ab43cc528fe7f3ccd69aeb6564a2e738e7bc6e30e71fd2e0d4bd64f39e }
-        - { file_name: WAS_V8.5.5_SUPPL_3_OF_3.zip, check_sum: 94e3d9b70b139ad5fa0578da6857b295c5d2370c1b6ecb544c1e5757406fec90 }
-    java:
-      profile_name: "IBM WebSphere Application Server V8.5"
-      profile_id: "com.ibm.websphere.IBMJAVA.v80"
-      features="com.ibm.sdk.8"
-      8.0.5:
-        version: "8.0.5017.20180726_2118"
-        version_check: "Installed com.ibm.websphere.IBMJAVA.v80"
-        files:
-          - { file_name: 8.0.5.17-WS-IBMWASJAVA-Linux.zip, check_sum: e8dfc4e9e4e502f8c94a6169f5c54d437d7faa8faa8c5741e09deac6be874b5b }
-      8.0.2:
-        version: "8.0.2010.20160224_1829"
-        version_check: "Installed com.ibm.websphere.IBMJAVA.v80"
-        files:
-          - { file_name: 8.0.2.10-WS-IBMWASJAVA-Linux.zip, check_sum: 7338d90d760596d95eb9622aa6a5ceb21c5604cece702abeeb8565c331f2aaa1 }
-
-
+# JDK 
+__jdk_product_id:       "com.ibm.java.jdk.v8"
+__jdk_version:          "{{ jdk_version | default('8.0.8021.20240318_0922') }}"
