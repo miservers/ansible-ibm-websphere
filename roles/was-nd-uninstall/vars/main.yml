@@ -1,6 +1,7 @@
 ---
 # WAS version
 __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+__iim_install_location: "{{ iim_install_location  | default('/opt/IBM/InstallationManager') }}"
 
 __this_version:         "{{ was_version | default('9.0.5016.20230609_0954') }}"
 __product_id:           "com.ibm.websphere.ND.v90"
