@@ -3,4 +3,4 @@
   hosts:                   dmgr
   become:                  true
   roles:
-    - roles/was-dmgr-create-profile
+    - roles/was-create-dmgr-profile
