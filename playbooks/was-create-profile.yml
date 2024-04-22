@@ -3,4 +3,4 @@
   hosts:                   was_servers
   become:                  true
   roles:
-    - roles/was-profile-create
+    - roles/was-create-profile
