@@ -1,0 +1,27 @@
+create
+profileName={{ __profile_name }}
+profilePath={{ __was_install_location }}/profiles/{{ __profile_name }}
+templatePath={{ __was_install_location }}/profileTemplates/managed
+nodeName={{ __was_nodename }}
+hostName={{ __was_hostname }}
+dmgrHost={{ dmgr_hostname }}
+dmgrPort={{ __dmgr_soap_port }}
+dmgrAdminUserName={{ __was_username }}
+dmgrAdminPassword={{ __was_password }}
+personalCertValidityPeriod=15
+signingCertValidityPeriod=15
+
+
+create
+profileName=AppSrv01
+profilePath={{ __was_install_location }}/profiles/{{ __profile_name }}
+templatePath=/opt/IBM/WebSphere/AppServer/profileTemplates/cell/default
+nodeName=rhel2CellManager01
+hostName=rhel2
+dmgrHost=rhel2
+dmgrPort=8879
+dmgrAdminUserName=wasadmin
+dmgrAdminPassword=changeit
+personalCertValidityPeriod=15
+signingCertValidityPeriod=15
+

@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - DMGR Profile Creation
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - roles/was-dmgr-create-profile

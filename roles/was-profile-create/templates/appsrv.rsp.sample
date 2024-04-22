@@ -1,0 +1,10 @@
+create
+profileName=AppSrv01
+profilePath=/opt/IBM/WebSphere/AppServer/profiles/AppSrv01
+templatePath=/opt/IBM/WebSphere/AppServer/profileTemplates/managed
+nodeName=rhel3CellNode01
+hostName=rhel3
+dmgrHost=rhel2
+dmgrPort=8879
+dmgrAdminUserName=wasadmin
+dmgrAdminPassword=changeit

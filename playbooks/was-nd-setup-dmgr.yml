@@ -1,7 +1,0 @@
----
-- name:                    WAS ND - SetUp DMGR Profile
-  hosts:                   dmgr,was_servers
-  #  serial:                  2
-  become:                  true
-  roles:
-    - roles/was-dmgr-create-profile

@@ -1,6 +1,9 @@
 # ansible-ibm-websphere
 Ansible playbooks for IBM WebSphere Application Server, Connections 6 and others
 
+# on Ansible Tower
+- Create invetory groups: dmgr,was_servers
+
 # Playbooks
 
 | Playbook name                 | Status         |           Description                                        |

@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - Profile Creation
+  hosts:                   was_servers
+  become:                  true
+  roles:
+    - roles/was-profile-create

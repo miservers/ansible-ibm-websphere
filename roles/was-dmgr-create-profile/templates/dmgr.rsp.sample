@@ -1,0 +1,10 @@
+create
+profileName=Dmgr01
+templatePath=/opt/IBM/WebSphere/AppServer/profileTemplates/cell/dmgr
+nodeProfilePath=/opt/IBM/WebSphere/AppServer/profiles/Dmgr01
+cellName=rhel2Cell01
+nodeName=rhel2CellManager01
+appServerNodeName=rhel2Node01
+adminUserName=wasadmin
+adminPassword=changeit
+enableAdminSecurity=true
