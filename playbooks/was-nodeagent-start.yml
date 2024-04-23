@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - Start a Node Agent
+  hosts:                   was_servers
+  become:                  true
+  roles:
+    - roles/was-nodeagent-start
