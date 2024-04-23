@@ -3,6 +3,45 @@ Ansible playbooks for IBM WebSphere Application Server, Connections 6 and others
 
 # on Ansible Tower
 - Create invetory groups: dmgr,was_servers
+- Inventory Vars
+~~~yaml
+---
+iim_repository_url: 'http://ibm-file-server.safar.ma/Binaries'
+iim_bin_file: 'agent.installer.linux.gtk.x86_64_1.9.2008.20240227_0018.zip'
+iim_bin_file_sha256: '6c33e0c6298bb477b5388a61599783c88c2e59fbd9084d0055bc5e090a7386c1'
+iim_version: '1.9.2008.20240227_0018'
+
+# WAS ND Vars 
+was_repository_url: 'http://ibm-file-server.safar.ma/repository_was'
+was_install_location: '/opt/IBM/WebSphere/AppServer'
+iim_install_location: '/opt/IBM/InstallationManager'
+imshared_location: '/opt/IBM/IMShared'
+was_version: '9.0.5016.20230609_0954'
+
+# JDK
+jdk_version: '8.0.8021.20240318_0922'
+
+# DMGR Profile Creation Vars
+dmgr_profile_name: 'Dmgr01'
+dmgr_hostname: 'rhel2'
+was_cellname: 'Cell01'
+dmgr_username: 'wasadmin'
+dmgr_password: 'changeit'
+
+# Create a Profile
+profile_name: 'AppSrv01'
+dmgr_soap_port: '8879'
+~~~
+
+# Enhacements TODO
+- Deploy tWAS ND
+- create/manage security config
+- multi node deployments
+- federate the node cells
+- create and update certificates
+- deploy an app
+- Update JVM, and WAS
+
 
 # Playbooks
 
