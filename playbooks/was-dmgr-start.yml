@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - Start The DMGR
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - roles/was-create-dmgr-start
