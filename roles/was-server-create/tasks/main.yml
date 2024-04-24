@@ -21,8 +21,8 @@
       - changeit 
       - -f 
       - /tmp/was_create_server.jy 
-      - {{ __server_name }}
-      - {{ __node_name }}
+      - "{{ __server_name }}"
+      - "{{ __node_name }}"
   register:      cout
   changed_when:  cout.rc == 0
   failed_when:   cout.rc != 0
