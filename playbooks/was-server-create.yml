@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - Create a Managed Server
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - roles/was-server-create
