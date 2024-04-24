@@ -1,0 +1,8 @@
+---
+__app_location: "{{ app_location | default('/opt/IBM/WebSphere/AppServer/installableApps/DefaultApplication.ear')}}"       
+__server_name: "{{ server_name | default('server01')}}"       
+__node_name: "{{ node_name | default('rhel3CellNode01') }}"
+__cell_name: "{{ server_name | default('Cell01')}}"       
+__dmgr_profile_name:    "{{ dmgr_profile_name | default('Dmgr01') }}"
+
+__was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"

@@ -1,0 +1,6 @@
+---
+- name:                    WAS ND - Deploy Application
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - roles/was-app-deploy

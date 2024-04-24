@@ -1,0 +1,24 @@
+import sys
+
+# Deploy an Application on WAS
+
+app_location=sys.argv[0]
+server_name = sys.argv[1]
+node_name = sys.argv[2]
+cell_name = sys.argv[3]
+
+#cellName='Cell01'
+#app_url='/opt/IBM/WebSphere/AppServer/installableApps/DefaultApplication.ear'
+#nodeName='rhel3CellNode01'
+#cellName='Cell01'
+#serverName='server1'
+
+# Debug
+# print AdminApp.options()
+
+
+options='[-node '+ node_name + ' -cell ' + cell_name + ' -server ' +  server_name + ']' 
+
+AdminApp.install(app_location , options)
+
+AdminConfig.save()
