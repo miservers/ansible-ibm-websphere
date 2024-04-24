@@ -1,7 +1,7 @@
 ---
 - name:          "Create Managed Server"
   command:
-    - {{ __was_install_location }}/profiles/{{ __profile_name }}/bin/wsadmin.sh
+    - "{{ __was_install_location }}/profiles/{{ __profile_name }}/bin/wsadmin.sh"
     - -lang 
     - jython 
     - -conntype 
