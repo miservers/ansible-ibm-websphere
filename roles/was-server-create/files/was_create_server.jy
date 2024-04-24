@@ -1,7 +1,7 @@
 import sys
 
 server_name = sys.argv[1]
-node_name = sys.argv[2]
+node_name = "rhel3CellNode01" #sys.argv[2]
 
 # Get Node ID, on which you are adding the new server
 node = AdminConfig.getid('/Node:%s/' %node_name)
