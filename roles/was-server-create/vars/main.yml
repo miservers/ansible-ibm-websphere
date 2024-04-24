@@ -1,5 +1,5 @@
 ---
-__server_name: "{{ server_name | default("server01")}}"       
+__server_name: "{{ server_name | default('server01')}}"       
 __node_name: "{{ node_name | default('rhel3CellNode01') }}"
 __dmgr_profile_name:    "{{ dmgr_profile_name | default('Dmgr01') }}"
 
