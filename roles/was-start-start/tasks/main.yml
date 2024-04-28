@@ -1,0 +1,12 @@
+---
+- name:          "Is {{ __server_name }} Running?"
+  shell:         "ps -p `cat '{{ __was_install_location }}/profiles/{{ __profile_name }}/logs/{{ __server_name }}/{{ __server_name }}.pid'` > /dev/null"
+  register:      server_is_running
+  ignore_errors: true
+
+- name:          "Start {{ __server_name }}"
+  command:       "{{ __was_install_location }}/profiles/{{ __profile_name }}/bin/startServer.sh {{ __server_name }}"
+  register:      server_is_running
+  changed_when:  server_is_running.rc == 0
+  failed_when:   server_is_running.rc != 0
+  when:          server_is_running.rc != 0
