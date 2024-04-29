@@ -20,7 +20,7 @@
       - -password 
       - changeit 
       - -f 
-      - /tmp/was_start_server.jy 
+      - /tmp/was_start_server.py 
       - "{{ __server_name }}"
       - "{{ __node_name }}"
       - "{{ __cell_name }}"
