@@ -1,8 +1,8 @@
 ---
 - name: Copy Jython Script File
   copy:
-    src: files/was_start_server.jy
-    dest: /tmp/was_start_server.jy
+    src: files/was_start_server.py
+    dest: /tmp/was_start_server.py
     force: true
 
 - name:          "Start Managed Server"
