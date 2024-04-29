@@ -6,17 +6,27 @@
 #
 import sys
 
-serverName = sys.argv[0]
-nodeName = sys.argv[1]
-cellName = sys.argv[2]
+#serverName = sys.argv[0]
+#nodeName = sys.argv[1]
+#cellName = sys.argv[2]
+
+serverName="server1"
+nodeName="rhel3CellNode01"
+cellName="Cell01"
 
 
 server = AdminControl.completeObjectName('cell=%s,node=%s,name=%s,type=Server,*'%(cellName, nodeName, serverName))
-print "Server Object: "+server
+#server = AdminControl.completeObjectName('cell="server1",node="rhel3CellNode01",name="Cell01",type=Server,*')
+#server = AdminControl.completeObjectName('cell=Cell01,node=rhel3CellNode01, name=server2,type=Server,*')
 
-serverState = AdminControl.getAttribute(server, 'state')
+
+if len(server) > 0:
+  print "Server Object: "+server
+  serverState = AdminControl.getAttribute(server, 'state')
+else:
+  serverState = 'STOPPED'
 
 if serverState != 'STARTED':
   AdminControl.startServer(serverName, nodeName)
 else:
-  print 'Server already stareted'
+  print 'Server already:'+serverState
